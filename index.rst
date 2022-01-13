@@ -196,6 +196,7 @@ Sensor Components
     MCP3008, components/sensor/mcp3008, mcp3008.jpg
     MCP9808, components/sensor/mcp9808, mcp9808.jpg
     MH-Z19, components/sensor/mhz19, mhz19.jpg
+    MLX90614, components/sensor/mlx90614, mlx90614.jpg
     MPU6050, components/sensor/mpu6050, mpu6050.jpg
     MQTT Subscribe, components/sensor/mqtt_subscribe, mqtt.png
     MS5611, components/sensor/ms5611, ms5611.jpg
