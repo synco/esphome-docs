@@ -1,0 +1,56 @@
+MLX90614 Infra Red (contactless) Thermometer Sensor
+====================================================
+
+.. seo::
+    :description: Instructions for setting up Melexis MLX90614 Infra Red Thermometer sensor (aka thermopile).
+
+The ``MLX90614`` temperature sensor allows you to use your MLX90614
+temperature sensor (`datasheet <https://media.melexis.com/-/media/files/documents/datasheets/mlx90614-datasheet-melexis.pdf>`__) with ESPHome
+
+The communication with the MLX90614 is done using I2C.
+
+.. code:: yaml
+    # Example configuration entry
+    i2c:
+      sda: 21
+      scl: 22
+      scan: True
+
+    sensor:
+      - platform: mlx90614
+        target_temperature:
+          id: my_object
+          name: "Object Temperature"
+          accuracy_decimals: 2
+        reference_temperature:
+          id: my_ambient
+          name: "Ambient"
+          accuracy_decimals: 2
+        update_interval: 10s
+
+Configuration variables:
+------------------------
+
+- **target_temperature** (**Optional**): The information for the temperature sensor.
+
+  - **name** (**Required**, string): The name for the temperature sensor.
+  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
+  - All other options from :ref:`Sensor <config-sensor>`.
+
+- **reference_temperature** (**Optional**): The information for the internal reference sensor
+
+  - **name** (**Required**, string): The name for the reference sensor.
+  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
+  - All other options from :ref:`Sensor <config-sensor>`.
+- **update_interval** (*Optional*, :ref:`config-time`): The interval to check the
+  sensor. Defaults to ``20s``.
+
+See Also
+--------
+
+- :ref:`sensor-filters`
+- :doc:`max6675`
+- :doc:`max31855`
+- :doc:`max31856`
+- :apiref:`MLX90614/MLX90614.h`
+- :ghedit:`Edit`
